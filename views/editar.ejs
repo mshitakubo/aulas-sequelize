@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Edição</title>
+</head>
+<body>
+    <header>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+    </header>
+    <main class="container mt-4">
+        <form action="/atores/editar/<%=ator.id%>?_method=PUT" class="card p-3" method="post">
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text"  class="form-control" id="nome" name="nome" value="<%=ator.nome%>">
+        </div>
+        <div class="form-group">
+            <label for="sobrenome">Sobrenome</label>
+            <input type="text"  class="form-control" id="sobrenome" value="<%=ator.sobrenome%>" name="sobrenome">
+        </div>
+        <div class="form-group">
+            <label for="avaliacao">Avaliação</label>
+            <input type="text"  class="form-control" id="avaliacao" value="<%=ator.avaliacao%>" name="avaliacao" placeholder="utilize ponto para numeros fracionados, por exemplo: 5.5">
+        </div>
+        <div class="form-group">
+            <label for="filme_favorito_id">Filme Favorito</label>
+            <input type="number"  class="form-control" id="filme_favorito_id" value="<%=ator.filme_favorito_id%>" name="filme_favorito_id">
+        </div>
+        <button class="btn btn-success" type="submit" >Salvar Alterações</button>
+      </form>
+      <form action="/atores/deletar/<%=ator.id%>?_method=DELETE" method="post">
+      <button class="btn btn-danger" type="submit">Deletar</button>
+      </form>
+    </main>
+</body>
+</html>

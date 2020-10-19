@@ -3,10 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var methodOverride = require('method-override')
 
 var indexRouter = require('./routes/index');
 var filmesRouter = require('./routes/filmes')
 var usersRouter = require('./routes/users');
+var atoresRouter = require('./routes/atores')
+var episodiosRouter = require('./routes/episodios')
 
 var app = express();
 
@@ -19,10 +22,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/filmes', filmesRouter)
 app.use('/users', usersRouter);
+app.use('/atores', atoresRouter)
+app.use('/episodios', episodiosRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,15 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var FilmesController = require('../controller/FilmesController')
-var AtoresController = require('../controller/AtoresController')
-
 
 router.get('/', FilmesController.index);
+router.get('/ver/:id', FilmesController.findById)
+router.get('/premios', FilmesController.premios)
 
-router.get('/atores', AtoresController.index)
-router.get('/atores/ver/:id', AtoresController.findById)
-router.get('/atores/search/:key', AtoresController.search)
-router.get('/atores/agregadores', AtoresController.agregadores)
+//innerjoin 1 pra muitos
+router.get('/innerjoin/:id', FilmesController.innerjoin)
 
 
 module.exports = router;
