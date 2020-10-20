@@ -10,4 +10,7 @@ router.get('/premios', FilmesController.premios)
 router.get('/innerjoin/:id', FilmesController.innerjoin)
 
 
+router.get('/home', FilmesController.home)
+
+
 module.exports = router;

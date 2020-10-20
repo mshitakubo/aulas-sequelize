@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Editar Generos</title>
+</head>
+<body>
+
+    <form class="col-8 offset-2 mt-3" action="/generos/<%=genero.id%>?_method=PUT" method="POST">      
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title mb-0">Edição Genero</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label><b>Nome</b></label>
+                            <input class="form-control" name="nome" value="<%= genero.nome %>" required placeholder="" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label><b>Ranking</b></label>
+                            <input class="form-control" type="number" value="<%= genero.ranking %>" name="ranking" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label><b>Status</b></label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="ativo"  required id="rdb-ativo" value=1>
+                                <label class="form-check-label" for="rdb-ativo">
+                                    Ativo
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="ativo" required id="rdb-inativo" value=0>
+                                <label class="form-check-label" for="rdb-inativo">
+                                    Inativo
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-right">
+                <button class="btn btn-primary">Salvar</button>
+            </div>
+        </div>
+    </form>
+    
+    
+</body>
+</html>

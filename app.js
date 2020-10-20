@@ -8,8 +8,9 @@ var methodOverride = require('method-override')
 var indexRouter = require('./routes/index');
 var filmesRouter = require('./routes/filmes')
 var usersRouter = require('./routes/users');
-var atoresRouter = require('./routes/atores')
-var episodiosRouter = require('./routes/episodios')
+var atoresRouter = require('./routes/atores');
+var episodiosRouter = require('./routes/episodios');
+var generosRouter = require('./routes/generos');
 
 var app = express();
 
@@ -25,10 +26,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
-app.use('/filmes', filmesRouter)
+app.use('/filmes', filmesRouter);
 app.use('/users', usersRouter);
-app.use('/atores', atoresRouter)
+app.use('/atores', atoresRouter);
 app.use('/episodios', episodiosRouter);
+app.use('/generos', generosRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

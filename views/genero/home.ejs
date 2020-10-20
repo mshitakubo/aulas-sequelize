@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Generos</title>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Ranking</th>
+            <th>Ativo</th>
+            <th>#</th>
+        </tr>
+            <% genero.forEach((item)=>{%>
+                <tr>
+                <td><%= item.id %></td>
+                <td><%= item.nome %></td>
+                <td><%= item.ranking %></td>
+                <td><%= item.ativo %></td>
+                <td>
+                    <form action="/generos/<%= item.id %>?_method=DELETE" method="post">
+                        <a href="/generos/<%= item.id %>">Editar</a>
+                        <button type="submit">Deletar</button>
+                    </form>
+                </td>
+            </tr>
+            <% }) %>
+    </table>
+    
+</body>
+</html>

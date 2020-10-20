@@ -56,7 +56,15 @@ const FilmesController = {
         })
         console.log(filme)
         res.send(filme)
+    },
+
+    home: async (req, res) => {
+
+        const filmes = await Filme.findAll()
+        return res.render('filme/home', {filmes})
     }
+
+
 }
 
 module.exports = FilmesController
